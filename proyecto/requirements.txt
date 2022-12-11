@@ -1,0 +1,13 @@
+asgiref
+Django
+django-environ
+djangorestframework
+djangorestframework-simplejwt
+Pillow
+psycopg2
+PyJWT
+pytz
+setuptools
+sqlparse
+tzdata
+whitenoise
