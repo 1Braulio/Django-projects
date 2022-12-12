@@ -13,13 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# from django.http import HttpResponse
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import render, redirect
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import logout
+from django.contrib.admin.views.decorators import staff_member_required
+from project.middleware import ipSet
 # authenticate, login, 
+
+@staff_member_required
+def ipsView(request):
+    template = 'ips.html'
+    context = {'ips': ipSet}
+    return render(request, template, context)
+
 
 def home(request):
     # home template
@@ -35,7 +45,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('portafolio/', include('project.urls')),
     path('', home, name = 'home'),
-    path('logout', logoutUser, name = 'logout'),
+    path('logout/', logoutUser, name = 'logout'),
+    path('ips/', ipsView, name = 'ips'),
 ]
     # path('', include('user.urls')),
 
