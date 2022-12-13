@@ -1,5 +1,5 @@
 # Portfolio Structure
-
+![image](https://user-images.githubusercontent.com/113323803/207254914-7a9b05b4-cc86-4ca3-b163-a7afec3f6fd7.png)
 Models:
 - Project
 - Review (unused)
